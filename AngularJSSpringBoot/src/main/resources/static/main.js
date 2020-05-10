@@ -6,7 +6,7 @@ app.controller("EmployeeController", function($scope, $http) {
  
     $scope.employees = [];
     $scope.employeeForm = {
-        empId: 1,
+        empId: "",
         empNo: "",
         empName: "",
 		empAddr: "",
@@ -23,7 +23,7 @@ app.controller("EmployeeController", function($scope, $http) {
         var method = "";
         var url = "";
  
-        if ($scope.employeeForm.empId == 1) {
+        if ($scope.employeeForm.empId == "") {
             method = "POST";
             url = '/employee';
         } else {
@@ -98,7 +98,7 @@ $scope.clearEmployee = function() {
  
     // Clear the form
     function _clearFormData() {
-        $scope.employeeForm.empId = -1;
+        $scope.employeeForm.empId = "";
         $scope.employeeForm.empNo = "";
         $scope.employeeForm.empName = "";
 		$scope.employeeForm.empAddr = "";

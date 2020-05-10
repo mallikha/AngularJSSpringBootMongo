@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>SpringBootAngularJS</artifactId>
+	<artifactId>SpringBootAngularJsApplication</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>SpringBootAngularJS</name>
 	<description>Demo project for Spring Boot</description>
