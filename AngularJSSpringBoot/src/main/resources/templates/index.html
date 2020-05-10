@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>AngularJS</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.js"></script>
+<script th:src="@{/main.js}"></script>
+<link  rel="stylesheet" type="text/css" href="@{/main.css}"/>
+</head>
+<body data-ng-app="EmployeeManagement" data-ng-controller="EmployeeController">
+	<h3>CRUD: Spring Boot + Rest + AngularJS</h3>
+	<form data-ng-submit="submitEmployee()">
+		<table>
+			<tr>
+				<td>Emp Id</td>
+				<td>{{employeeForm.empId}}</td>
+			</tr>
+			<tr>
+				<td>Emp No</td>
+				<td><input type="text" data-ng-model="employeeForm.empNo" /></td>
+			</tr>
+			<tr>
+				<td>Emp Name</td>
+				<td><input type="text" data-ng-model="employeeForm.empName" /></td>
+			</tr>
+			<tr>
+				<td>Emp Address</td>
+				<td><input type="textArea" data-ng-model="employeeForm.empAddr" /></td>
+			</tr>
+			<tr>
+				<td>Emp Position</td>
+				<td><input type="text" data-ng-model="employeeForm.position" /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><input type="submit" value="Submit"
+					class="blue-button" /></td>
+			</tr>
+		</table>
+	</form>
+	</br>
+	<a class="create-button" data-ng-click="createEmployee()" style="color: blue;cursor: pointer;padding: 5px;">Create
+		Employee</a>
+		
+		<a class="create-button" data-ng-click="clearEmployee()" style="color: blue;cursor: pointer;padding: 5px;">Clear
+		Employee</a>
+		
+	<table border="1">
+		<tr>
+			<th>Emp Id</th>
+			<th>Emp No</th>
+			<th>Emp Name</th>
+			<th>Emp Address</th>
+			<th>Emp Position</th>
+			<th>edit</th>
+			<th>delete</th>
+		</tr>
+		<tr data-ng-repeat="employee in employees">
+			<td><b>{{ employee.empId }}</b></td>
+			<td>{{ employee.empNo }}</td>
+			<td><b>{{ employee.empName }}</b></td>
+			<td><b>{{ employee.empAddr }}</b></td>
+			<td><b>{{ employee.position }}</b></td>
+			<td><a data-ng-click="editEmployee(employee)" style="background: green;cursor: pointer;padding: 2px 5px;">Edit</a>
+			</td>
+			<td><a data-ng-click="deleteEmployee(employee)" style="background: red;cursor: pointer;padding: 2px 5px;">Delete</a>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>
