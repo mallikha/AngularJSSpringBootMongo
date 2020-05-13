@@ -98,7 +98,7 @@ $scope.clearEmployee = function() {
  
     // Clear the form
     function _clearFormData() {
-        $scope.employeeForm.empId = "";
+       $scope.employeeForm.empId = "";
         $scope.employeeForm.empNo = "";
         $scope.employeeForm.empName = "";
 		$scope.employeeForm.empAddr = "";

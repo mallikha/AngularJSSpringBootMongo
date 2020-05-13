@@ -88,11 +88,12 @@ public class MainRESTController {
             method = RequestMethod.DELETE, //
             produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
     @ResponseBody
-    public void deleteEmployee(@PathVariable("empId") String empId) {
+    public void deleteEmployee(
+    		@PathVariable("empId") String empId
+    		) {
   
         System.out.println("(Service Side) Deleting employee with Id: " + empId);
-  
-        service.delete(empId.toString());
+        service.delete(empId);
     }
   
 }

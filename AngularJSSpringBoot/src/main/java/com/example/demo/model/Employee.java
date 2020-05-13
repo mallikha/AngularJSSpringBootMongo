@@ -1,7 +1,13 @@
 package com.example.demo.model;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document
 public class Employee{
 	
-    private String empId;
+    @Id
+	private String empId;
     private String empNo;
     private String empName;
     private String empAddr;
@@ -12,7 +18,8 @@ public class Employee{
     }
  
     public Employee(EmployeeForm empForm) {
-        this.empId = empForm.getEmpId();
+    	super();
+       this.empId = empForm.getEmpId();
         this.empNo = empForm.getEmpNo();
         this.empName = empForm.getEmpName();
         this.empAddr = empForm.getEmpAddr();
@@ -20,7 +27,8 @@ public class Employee{
     }
  
     public Employee(String empId, String empNo, String empName, String position,String empAddr) {
-        this.empId = empId;
+        super();
+    	this.empId = empId;
         this.empNo = empNo;
         this.empName = empName;
         this.empAddr = empAddr;

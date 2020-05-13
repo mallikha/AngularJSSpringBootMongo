@@ -23,7 +23,7 @@ public class EmployeeService {
 	public Employee update(Employee emp) {
 		return repo.update(emp);
 	}
-	public String delete(String id) {
+	public Long delete(String id) {
 		return repo.delete(id);
 		
 	}
